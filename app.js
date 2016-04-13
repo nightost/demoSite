@@ -24,6 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+/**
+ * serve static files
+ */
+app.use('/demo-html' , express.static('static/html'));
+app.use('/resources' , express.static('public/stylesheets'));
+app.use('/resources' , express.static('public/javascripts'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -6,6 +6,19 @@ module.exports = {
         testNpmLoad : './static/javascript/testNpmLoad/testNpmLoad'
     },
     output : {
-        filename : 'public/javascript/testNpmLoad.js'
+        filename : '[name]-debug.js',
+        path : 'public/javascripts/'
+        //todo test publicPath
+        //publicPath : './'
+    },
+    module : {
+        loaders : [{
+            test : /\.js$/,
+            loader: 'babel',
+            exclude : /(node_modules|bower_components)/,
+            query : {
+                presets : ['es2015']
+            }
+        }]
     }
 }

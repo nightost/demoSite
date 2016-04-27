@@ -44,10 +44,29 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Created by nightost on 16/4/24.
-	 */
-	var request = __webpack_require__(1);
+	'use strict';
+
+	var _superagent = __webpack_require__(1);
+
+	var _superagent2 = _interopRequireDefault(_superagent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var testRequest; /**
+	                  * Created by nightost on 16/4/24.
+	                  */
+
+	testRequest = {};
+	testRequest.getRequest = function () {
+	    _superagent2.default.post('/hello/get1').end(function (err, res) {
+	        if (err || !res.ok) {
+	            console.log('Oh no! error');
+	        } else {
+	            console.log('yay got ' + JSON.stringify(res.body));
+	        }
+	    });
+	};
+	testRequest.getRequest();
 
 /***/ },
 /* 1 */

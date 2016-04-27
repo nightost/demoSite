@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var hello = require('./routes/hello');
 
 var app = express();
 
@@ -24,12 +25,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/hello', hello);
 /**
  * serve static files
  */
 app.use('/demo-html' , express.static('static/html'));
-app.use('/resources' , express.static('public/stylesheets'));
-app.use('/resources' , express.static('public/javascripts'));
+app.use('/resources/css' , express.static('public/stylesheets'));
+app.use('/resources/js' , express.static('public/javascripts'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

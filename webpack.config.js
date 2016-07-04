@@ -3,7 +3,7 @@
  */
 module.exports = {
     entry : {
-        testServeralPromise : './static/javascript/testNpmLoad/testServeralPromise'
+        testCities : './static/javascript/testCities/testCities'
     },
     output : {
         filename : '[name]-debug.js',

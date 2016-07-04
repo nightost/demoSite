@@ -44,20 +44,23 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	/**
 	 * Created by nightost on 16/7/4.
 	 */
-	window.onload = loadFnc;
+
 	/**
 	 * all resourse all loaded
 	 */
 	var loadFnc = function loadFnc() {
-	  fetch('/cities').then(function (response) {
+	  fetch('/users/cities', {
+	    method: "POST"
+	  }).then(function (response) {
 	    console.log(response);
 	  });
 	};
+	window.onload = loadFnc;
 
 /***/ }
 /******/ ]);

@@ -5,12 +5,22 @@
 /**
  * all resourse all loaded
  */
-var loadFnc = () => {
-    fetch('/users/cities',{
+var citySearcher = {
+    loadFnc : () => {
+        fetch('/users/cities',{
             method: "POST"
         })
         .then(function(response){
-            console.log(response);
+            return response.json();
+        })
+        .then(function (json) {
+            console.log(json);
         });
+    },
+    initUI : () =>{
+
+    }
 };
-window.onload = loadFnc;
+window.onload = function(){
+    citySearcher.loadFnc();
+};

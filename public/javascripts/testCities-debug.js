@@ -53,14 +53,21 @@
 	/**
 	 * all resourse all loaded
 	 */
-	var loadFnc = function loadFnc() {
-	  fetch('/users/cities', {
-	    method: "POST"
-	  }).then(function (response) {
-	    console.log(response);
-	  });
+	var citySearcher = {
+	    loadFnc: function loadFnc() {
+	        fetch('/users/cities', {
+	            method: "POST"
+	        }).then(function (response) {
+	            return response.json();
+	        }).then(function (json) {
+	            console.log(json);
+	        });
+	    },
+	    initUI: function initUI() {}
 	};
-	window.onload = loadFnc;
+	window.onload = function () {
+	    citySearcher.loadFnc();
+	};
 
 /***/ }
 /******/ ]);

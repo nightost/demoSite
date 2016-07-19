@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var cityInfo = require('../controller/city-info/cityInfo');
+var cityCode = require('../controller/city-info/getCityCode');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
@@ -18,5 +19,8 @@ router.post('/cities', function (req, res, next) {
 
     });
 });
-
+router.get('/cityCodes' , function (req, res, next) {
+    cityCode();
+    res.json('运行中');
+});
 module.exports = router;

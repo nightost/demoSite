@@ -15,16 +15,13 @@ function cityCode() {
     });
 }
 function getCityInfo(obj){ 
-    var cityName = obj.provinceName;
+    var cityName = iconv.encode(obj.provinceName , 'gbk').toString('binary');
     console.log(cityName);
     var options;
     options = {
         method: 'POST',
         json : true,
         uri : uri,
-        header : {
-            'content-type' : 'application/x-www-form-urlencoded; charset=UTF-8'
-        },
         form : {
             shengji : cityName
         }

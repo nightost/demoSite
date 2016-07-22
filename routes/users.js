@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var cityInfo = require('../controller/city-info/cityInfo');
-var cityCode = require('../controller/city-info/getCityCode');
+var getCities = require('../controller/city-info/getCities');
+var _ = require('lodash');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
@@ -20,7 +21,21 @@ router.post('/cities', function (req, res, next) {
     });
 });
 router.get('/cityCodes' , function (req, res, next) {
-    cityCode();
+    getCities.init()
+            .then(function (data) {
+                handleBackdata(data);
+            })
+            .catch(function (error) {
+                console.log(data);
+            });
     res.json('运行中');
 });
+
+function handleBackdata(data) {
+    var cities = [];
+    _.forEach(data , function (item) {
+        cities = cities.concat(item.value);
+    });
+    console.log(cities);
+}
 module.exports = router;

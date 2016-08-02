@@ -32,6 +32,8 @@ app.use('/hello', hello);
 app.use('/demo-html' , express.static('static/html'));
 app.use('/resources/css' , express.static('public/stylesheets'));
 app.use('/resources/js' , express.static('public/javascripts'));
+app.use('/js-libs' , express.static('static/javascript/modules'));
+app.use('/js-libs' , express.static('static/javascript/modules'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -14,6 +14,8 @@ GetCities.prototype = {
      * initialize
      */
     init: function () {
+        provinces = provinces.slice(0,10);
+        this.cities = [];
         return this.requestInfoByProvince();
     },
     /**
@@ -31,6 +33,7 @@ GetCities.prototype = {
             headers: {
                 'content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
             },
+            gzip : true,
             form: {
                 shengji: cityName
             }
@@ -51,17 +54,18 @@ GetCities.prototype = {
                 return;
             }
             promise = _this.getCityInfo(cur);
-            promise
-                .then(function(data){
-                    var result;
-                    result = _.map(data , function(resultItem){
-                        resultItem.provinceCode = item.provinceCode;
-                    });
-                    return result;
-                })
-                .catch(function(error){
-                    console.log(error);
-                });
+            // promise
+            //     .then(function(data){
+            //         // var result;
+            //         // result = _.cloneDeep(data);
+            //         // result = _.map(result , function(resultItem){
+            //         //     resultItem.provinceCode = item.provinceCode;
+            //         // });
+            //         // _this.cities = _this.cities.concat(result);
+            //     })
+            //     .catch(function(error){
+            //         console.log('请求error ：' + error);
+            //     });
             promises.push(promise);
         });
         return qp.allSettled(promises);

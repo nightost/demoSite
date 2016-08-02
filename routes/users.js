@@ -36,6 +36,6 @@ function handleBackdata(data) {
     _.forEach(data , function (item) {
         cities = cities.concat(item.value);
     });
-    console.log(cities);
+    console.log('城市个数 ： ' + cities.length);
 }
 module.exports = router;

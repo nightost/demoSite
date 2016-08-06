@@ -129,7 +129,7 @@
 	    return FakeSearch;
 	}(_react.Component);
 
-	_reactDom2.default.render(_react2.default.createElement(FakeSearch, null), document.querySelector('#main'));
+	_reactDom2.default.render(_react2.default.createElement(FakeSearch, null), document.querySelector('#search-con'));
 
 /***/ },
 /* 1 */

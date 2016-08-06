@@ -46,4 +46,4 @@ class FakeSearch extends Component{
             );
     }
 }
-ReactDOM.render(<FakeSearch /> ,document.querySelector('#main'));
+ReactDOM.render(<FakeSearch /> ,document.querySelector('#search-con'));

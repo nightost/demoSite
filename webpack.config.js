@@ -4,7 +4,9 @@
 var webpack = require('webpack');
 module.exports = {
     entry : {
-        fakeSearch : './static/javascript/fakeSearch/fakeSearch'
+        // fakeSearch : './static/javascript/fakeSearch/fakeSearch'
+        testRedux : './static/javascript/testRedux/store'
+        
     },
     output : {
         filename : '[name]-debug.js',

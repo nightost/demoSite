@@ -2,20 +2,21 @@
  * Created by nightost on 16/4/24.
  */
 var webpack = require('webpack');
+const path = require('path');
 module.exports = {
     entry : {
-        // fakeSearch : './static/javascript/fakeSearch/fakeSearch'
-        testRedux : './static/javascript/testRedux/store'
-        
+        fakeSearch : './static/javascript/fakeSearch/fakeSearch',
+        testRedux : './static/javascript/testRedux/store',
+        testReact : './static/javascript/testReact/testReact'
     },
     output : {
         filename : '[name]-debug.js',
-        path : 'public/javascripts/'
+        path : path.resolve(__dirname, 'public/javascripts/')
     },
     module : {
         loaders : [{
             test : /\.js$/,
-            loader: 'babel',
+            loader: 'babel-loader',
             exclude : /(node_modules|bower_components)/,
             query : {
                 presets : ['react', 'es2015']

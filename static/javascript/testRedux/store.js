@@ -1,8 +1,8 @@
 import {createStore} from 'redux'
 import todoApp from './reducers'
 import {ADD_TODO , REMOVE_TODO , SET_VISIBILITY_FILTER , TOGGLE_TODO , VisibilityFilters} from './actionTypes'
-import {addTodo , toggleTodo , removeTodo , setVisibilityFilter} from './actions'
-console.log(typeof todoApp);
+import {addTodo , toggleTodo , removeTodo , setVisibilityFilter , a} from './actions'
+console.log(a);
 let store = createStore(todoApp);
 let unsubscribe = store.subscribe(() => {
     console.log(store.getState())

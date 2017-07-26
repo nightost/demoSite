@@ -1,4 +1,5 @@
 import {ADD_TODO , REMOVE_TODO , SET_VISIBILITY_FILTER , TOGGLE_TODO} from './actionTypes'
+export {ADD_TODO as a} from './actionTypes'
 export var addTodo = (text) => ({
         type : ADD_TODO,
         text

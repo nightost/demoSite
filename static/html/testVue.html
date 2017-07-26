@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='../javascript/modules/vuejs/vue-2.0.1.js'></script>
+</head>
+<body>
+    <div class="main" id="main">
+        <input type="text" value="helloWorld" v-model="helloWorld">
+    </div>
+    <script type="text/javascript">
+        let vueOps = {
+            el : '#main',
+            data : { 
+                helloWorld : ""
+            },
+            mounted(){
+                
+            }
+        }
+        new Vue(vueOps)
+    </script>
+</body>
+</html>

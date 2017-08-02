@@ -5,8 +5,8 @@ var webpack = require('webpack');
 const path = require('path');
 module.exports = {
     entry : {
-        fakeSearch : './static/javascript/fakeSearch/fakeSearch',
-        testRedux : './static/javascript/testRedux/store',
+        // fakeSearch : './static/javascript/fakeSearch/fakeSearch',
+        // testRedux : './static/javascript/testRedux/store',
         testReact : './static/javascript/testReact/testReact'
     },
     output : {
@@ -30,7 +30,7 @@ module.exports = {
     //     })
     // ],
     externals : {
-        "react" : 'window.React',
-        "react-dom" : 'window.ReactDOM'
+        "React" : 'window.React',
+        "React-Dom" : 'window.ReactDOM'
     }
 }
